@@ -1,0 +1,15 @@
+.appWrapper {
+  display: grid;
+  grid-template-areas:
+    "hdr hdr"
+    "sdbr cntnt";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+.appWrapperContent {
+    display: grid;
+    border: 1px solid blue;
+    grid-area: "cntnt";
+    background-color: lightgrey;
+}
+

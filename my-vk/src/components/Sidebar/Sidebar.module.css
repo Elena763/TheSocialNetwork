@@ -1,0 +1,6 @@
+.nav {
+    display: grid;
+    border: 1px solid green;
+    grid-area: sdbr;
+    background-color: darkgray;
+  }
