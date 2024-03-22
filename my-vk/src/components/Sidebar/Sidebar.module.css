@@ -3,4 +3,14 @@
     border: 1px solid green;
     grid-area: sdbr;
     background-color: darkgray;
+    grid-template-rows: repeat(9, 40px);
+    padding: 10px;
   }
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+.item a:active, .item a:focus {
+  color: black;
+}
