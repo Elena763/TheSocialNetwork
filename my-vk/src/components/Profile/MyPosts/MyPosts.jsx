@@ -4,16 +4,27 @@ import Post from "./Post/Post";
 
 
 function MyPosts() {
+  let posts =[
+    {id: 1, message: "Hello world!", likesCount: '15'},
+    {id: 2, message: "Hi, how are you", likesCount: '25'},
+    {id: 3, message: "It's my first post", likesCount: '35'},
+  ];
+
+  let postElement =
+    posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
     return (
       <div>
-          My posts
+          <h3>My posts</h3>
         <div>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button>Add post</button>
+          <div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div>
+            <button>Add post</button>
+          </div>
         </div>
         <div className={MypostsStyle.posts}>
-          <Post message='Hi, how are you' likesCount='15'/>
-          <Post message="It's my first post" likesCount='25'/>
+          {postElement}
         </div>
       </div>
     );

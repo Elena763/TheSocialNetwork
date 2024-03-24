@@ -1,15 +1,15 @@
 import React from "react";
 import profileStyle from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
-
+import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
 
 function Profile() {
     return (
       <div className={profileStyle.profile}>
-        <div>ava + description</div>
+        <ProfileInfo/>
         <MyPosts/>
       </div>
     );
   }
 
-  export default Profile;
+export default Profile;
