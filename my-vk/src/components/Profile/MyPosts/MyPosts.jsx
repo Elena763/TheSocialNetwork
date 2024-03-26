@@ -3,15 +3,10 @@ import MypostsStyle from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 
-function MyPosts() {
-  let posts =[
-    {id: 1, message: "Hello world!", likesCount: '15'},
-    {id: 2, message: "Hi, how are you", likesCount: '25'},
-    {id: 3, message: "It's my first post", likesCount: '35'},
-  ];
+function MyPosts(props) {
 
   let postElement =
-    posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
+    props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
     return (
       <div>
           <h3>My posts</h3>

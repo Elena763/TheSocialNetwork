@@ -3,11 +3,11 @@ import profileStyle from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
 
-function Profile() {
+function Profile(props) {
     return (
       <div className={profileStyle.profile}>
         <ProfileInfo/>
-        <MyPosts/>
+        <MyPosts posts={props.posts}/>
       </div>
     );
   }

@@ -9,7 +9,7 @@ import Music from "./components/Music/Music.jsx";
 import News from "./components/News/News.jsx";
 import Settings from "./components/Settings/Settings.jsx"
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className={appStyle.appWrapper}>
@@ -17,8 +17,8 @@ function App() {
         <Sidebar />
         <div className={appStyle.appWrapperContent}>
           <Routes>
-            <Route path='/dialogs' element={<Dialogs/>} />
-            <Route path='/profile' element={<Profile/>} />
+          <Route path='/dialogs' element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
+            <Route path='/profile' element={<Profile posts={props.posts}/>} />
             <Route path='/news' element={<News/>} />
             <Route path='/music' element={<Music/>} />
             <Route path='/settings' element={<Settings/>} />
