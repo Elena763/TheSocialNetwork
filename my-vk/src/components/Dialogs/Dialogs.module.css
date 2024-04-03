@@ -1,0 +1,27 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+h5{
+    margin-left: 5px;
+}
+.item {
+    border: 1px solid red;
+}
+.user {
+    border: 1px solid rgb(0, 255, 255);
+    display: grid;
+    height: 70%;
+}
+.messages {
+    border: 1px solid rgb(0, 255, 42);
+}
+.text {
+    border-radius: 10px;
+}
+.button {
+    border-radius: 7px;
+    height: 30px;
+    width: 150px;
+    background-color: rgba(44, 70, 117, 0.425);
+}

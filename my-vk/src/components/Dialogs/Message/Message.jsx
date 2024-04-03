@@ -3,9 +3,12 @@ import MessageStyle from './Message.module.css';
 
 function Message(props) {
   return(
-    <div className={MessageStyle.message}>
-      {props.message}
+    <div className={MessageStyle.messageWrapp}>
+        <div className={MessageStyle.message}>
+          {props.message}
+        </div>
     </div>
+
   )
 }
 

@@ -1,0 +1,12 @@
+.messageWrapp {
+    display: flex;
+}
+.message {
+    background-color: lightgrey;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    height: max-content;
+    min-height: 40px;
+    width: fit-content;
+    padding: 5px;
+}
