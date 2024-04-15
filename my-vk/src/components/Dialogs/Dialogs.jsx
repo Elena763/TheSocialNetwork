@@ -3,7 +3,7 @@ import DialogsStyle from './Dialogs.module.css';
 //import {NavLink} from 'react-router-dom';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
-import { sendMessageAC, updateNewMessageBodyAC } from "../../redux/state";
+import { sendMessageAC, updateNewMessageBodyAC } from "../../redux/dialogs-reduser.js";
 
 function Dialogs(props) {
   let dialogElements =
@@ -34,8 +34,11 @@ function Dialogs(props) {
           <textarea
           className={DialogsStyle.text}
           ref={newMessageBody}
+          value={props.newMessageBod}
           onChange={onNewMessagesChange}
-          placeholder="Написать сообщение"></textarea>
+          placeholder="Написать сообщение"
+          >
+          </textarea>
           <button
           className={DialogsStyle.button}
           onClick={onSendMessageClick}>Add</button>

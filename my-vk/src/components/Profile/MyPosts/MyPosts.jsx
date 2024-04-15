@@ -1,7 +1,7 @@
 import React from "react";
 import MypostsStyle from './MyPosts.module.css';
 import Post from "./Post/Post";
-import {addPostAC, updateNewPostTextAC} from "../../../redux/state.js";
+import {addPostAC, updateNewPostTextAC} from "../../../redux/profile-reduser.js";
 
 function MyPosts(props) {
 
@@ -25,8 +25,9 @@ function MyPosts(props) {
           <h3>My posts</h3>
         <div>
           <div>
-            <textarea name="" onChange={onPostChange} ref={newPostElement}
-            cols="30" rows="10"
+            <textarea
+            onChange={onPostChange}
+            ref={newPostElement}
             value={props.newPostText}/>
           </div>
           <div>
