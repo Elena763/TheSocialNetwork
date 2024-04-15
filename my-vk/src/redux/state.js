@@ -1,5 +1,9 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+
 let store = {
     _state: {
         profilePage: {
@@ -11,14 +15,6 @@ let store = {
             newPostText: "bebebebe",
         },
         dialogsPage: {
-            messages: [
-                {id: 1, message: "Hi"},
-                {id: 2, message: "How are you?"},
-                {id: 3, message: "It`s fine"},
-                {id: 4, message: "Amazing"},
-                {id: 5, message: "Goodbye"},
-                {id: 6, message: "See you later"},
-            ],
             dialogs: [
                 {id: 1, name: "Katya"},
                 {id: 2, name: "Ivan"},
@@ -27,7 +23,16 @@ let store = {
                 {id: 5, name: "Marina"},
                 {id: 6, name: "Evgeniy"},
             ],
-        }
+            messages: [
+                {id: 1, message: "Hi"},
+                {id: 2, message: "How are you?"},
+                {id: 3, message: "It`s fine"},
+                {id: 4, message: "Amazing"},
+                {id: 5, message: "Goodbye"},
+                {id: 6, message: "See you later"},
+            ],
+            newMessageBody: "",
+        },
         /*sidebar: {
 
         },*/
@@ -58,6 +63,15 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.newMessage;
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === SEND_MESSAGE) {
+            let newMessage = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.messages.push({id: 7, message: newMessage});
+            this._state.dialogsPage.newMessageBody = '';
+            this._callSubscriber(this._state);
         }
     },
 }
@@ -66,5 +80,9 @@ export const addPostAC = () => ({type: ADD_POST})
 
 export const updateNewPostTextAC = (text) => ({
     type: UPDATE_NEW_POST_TEXT, newText: text})
+
+export const sendMessageAC = () => ({type: SEND_MESSAGE})
+export const updateNewMessageBodyAC = (message) => ({
+    type: UPDATE_NEW_MESSAGE_BODY, newMessage: message})
 
 export default store;

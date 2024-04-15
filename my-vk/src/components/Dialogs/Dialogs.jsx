@@ -3,6 +3,7 @@ import DialogsStyle from './Dialogs.module.css';
 //import {NavLink} from 'react-router-dom';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
+import { sendMessageAC, updateNewMessageBodyAC } from "../../redux/state";
 
 function Dialogs(props) {
   let dialogElements =
@@ -10,11 +11,16 @@ function Dialogs(props) {
   let messageElements =
     props.state.messages.map (m => <Message message={m.message}/>);
 
-  let newMessageElement = React.createRef();
+  let newMessageBody = React.createRef();
 
-  let addMessage = () => {
-    let text = newMessageElement.current.value;
-    alert(text);
+  let onSendMessageClick= () => {
+    props.dispatch(sendMessageAC());
+  }
+
+  let onNewMessagesChange= () => {
+    let message = newMessageBody.current.value;
+    let action = updateNewMessageBodyAC(message);
+    props.dispatch(action);
   }
 
     return (
@@ -25,8 +31,14 @@ function Dialogs(props) {
         </div>
         <div className={DialogsStyle.messages}>
           {messageElements}
-          <textarea className={DialogsStyle.text} ref={newMessageElement} placeholder="Написать сообщение" name="" id="" cols="30" rows="10"></textarea>
-          <button className={DialogsStyle.button} onClick={addMessage}>Add</button>
+          <textarea
+          className={DialogsStyle.text}
+          ref={newMessageBody}
+          onChange={onNewMessagesChange}
+          placeholder="Написать сообщение"></textarea>
+          <button
+          className={DialogsStyle.button}
+          onClick={onSendMessageClick}>Add</button>
         </div>
       </div>
     );
