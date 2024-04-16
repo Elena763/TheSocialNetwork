@@ -10,6 +10,7 @@ import News from "./components/News/News.jsx";
 import Settings from "./components/Settings/Settings.jsx"
 
 function App(props) {
+
   return (
     <BrowserRouter>
       <div className={appStyle.appWrapper}>
@@ -17,7 +18,9 @@ function App(props) {
         <Sidebar />
         <div className={appStyle.appWrapperContent}>
           <Routes>
+
           <Route path='/dialogs' element={<Dialogs
+
                 state={props.state.dialogsPage}
                 dispatch={props.dispatch}
                 />} />
