@@ -1,26 +1,25 @@
 import React from "react";
 import DialogsStyle from './Dialogs.module.css';
-//import {NavLink} from 'react-router-dom';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
-import { sendMessageAC, updateNewMessageBodyAC } from "../../redux/dialogsReducer.js";
 
 function Dialogs(props) {
-  let dialogElements =
-    props.state.dialogs.map (d => <DialogItem name={d.name} id={d.id}/>);
-  let messageElements =
-    props.state.messages.map (m => <Message message={m.message}/>);
 
-  let newMessageBody = React.createRef();
+  let state = props.dialogsPage;
+
+  let dialogElements =
+    state.dialogs.map (d => <DialogItem name={d.name} id={d.id}/>);
+  let messageElements =
+    state.messages.map (m => <Message message={m.message}/>);
+  let newMessageBody = state.newMessageBody;
 
   let onSendMessageClick= () => {
-    props.dispatch(sendMessageAC());
+    props.sendMessage();
   }
 
-  let onNewMessagesChange= () => {
-    let message = newMessageBody.current.value;
-    let action = updateNewMessageBodyAC(message);
-    props.dispatch(action);
+  let onNewMessagesChange= (e) => {
+    let message = e.target.value;
+    props.updateNewMessageBody(message);
   }
 
     return (
@@ -33,8 +32,8 @@ function Dialogs(props) {
           {messageElements}
           <textarea
           className={DialogsStyle.text}
-          ref={newMessageBody}
-          value={props.newMessageBod}
+          //ref={newMessageBody}
+          value={newMessageBody}
           onChange={onNewMessagesChange}
           placeholder="Написать сообщение"
           >
