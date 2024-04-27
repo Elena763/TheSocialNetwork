@@ -8,7 +8,7 @@
 }
 .appWrapperContent {
     display: grid;
-    border: 1px solid blue;
+    border: 1px solid rgb(23, 23, 148);
     grid-area: "cntnt";
     background-color: lightgrey;
 }
