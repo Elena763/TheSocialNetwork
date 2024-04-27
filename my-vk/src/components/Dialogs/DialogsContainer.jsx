@@ -11,10 +11,10 @@ import { connect } from "react-redux";
 
   let mapDispatchToProps = (dispatch) => {
     return {
-      updateNewMessageBody: () => {
+      sendMessage: () => {
         dispatch(sendMessageAC());
       },
-      sendMessage: (message ) => {
+      updateNewMessageBody: (message ) => {
         dispatch(updateNewMessageBodyAC(message));
       }
     }
