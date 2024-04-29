@@ -3,6 +3,8 @@
     border: 1px solid red;
     grid-area: hdr;
     background-color: gray;
+    color:aliceblue;
+    font-size: larger;
   }
 .header img{
     width: 50px;
