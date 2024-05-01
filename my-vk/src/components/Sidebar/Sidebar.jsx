@@ -33,6 +33,9 @@ function Sidebar() {
           <div className={sideStyle.item}>
             <NavLink to='/settings'> Settings </NavLink>
           </div>
+          <div className={sideStyle.item}>
+            <NavLink to='/users'>Users </NavLink>
+          </div>
         </nav>
     );
   }
