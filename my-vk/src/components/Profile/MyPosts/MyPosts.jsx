@@ -29,7 +29,7 @@ function MyPosts(props) {
             value={props.newPostText}/>
           </div>
           <div>
-            <button onClick={onAddPost}>Add post</button>
+            <button className={MypostsStyle.button} onClick={onAddPost}>Add post</button>
           </div>
         </div>
         <div className={MypostsStyle.posts}>

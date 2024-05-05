@@ -2,3 +2,14 @@
   color: blue;
   border: 1px solid purple;
 }
+.button {
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  color: rgb(48, 47, 47);
+  font-size: large;
+  background-color: #BACAD9;
+}
