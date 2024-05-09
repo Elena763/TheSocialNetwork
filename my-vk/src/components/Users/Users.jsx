@@ -6,28 +6,38 @@ import userPic from "../../assets/images/ProfileImg.png";
 class Users extends React.Component {
 
   componentDidMount() {
-      axios.get("https://social-network.samuraijs.com/api/1.0/users")
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+        .then(response => {
+          this.props.setUsers(response.data.items);
+          this.props.setTotalUsersCount(response.data.totalCount);
+      });
+  }
+  onPageChanged = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber);
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
         .then(response => {
           this.props.setUsers(response.data.items);
       });
   }
 
-       /*
-        [
-          {id: 1, userpic: 'https://mrandmrs50plus.com/wp-content/uploads/2018/02/smiling-woman-2.jpg',
-            followed: false, fullname: 'Elena', status: "Hello world!", location: {country: 'Russia', city: 'Samara'}},
-          {id: 2, userpic: 'https://gallamed.ru/upload/iblock/ee6/ee6969e643c6bb47242b383b5ab32380.png',
-            followed: true, fullname: 'Vlada', status: "Hello!", location: {country: 'Kazakhstan', city: 'Astana'}},
-          {id: 3, userpic: 'https://diepenbrockfacialcosmeticsurgery.com/wp-content/uploads/2016/12/AdobeStock_non-surgical.jpg',
-            followed: false, fullname: 'Renata', status: "world!", location: {country: 'Russia', city: 'Ufa'}},
-          {id: 4, userpic: 'https://455811.selcdn.ru/lovemother/uploads/2018/01/215.jpg',
-            followed: true, fullname: 'Stasy', status: "Horld!", location: {country: 'Vietnam', city: 'NhaTrang'}},
-            'https://social-network.samuraijs.com/users'
-          ]*/
 
   render () {
+
+    let pagesCount = Math.ceil (this.props.totalUsersCount / this.props.pageSize);
+    let pages = [];
+    for ( let i=1; i<=pagesCount; i++) {
+      pages.push(i);
+
+    }
+
     return (
       <div className={usersStyle.s}>
+        <div>
+          {pages.map( p => {
+            return <span className={this.props.currentPage === p && usersStyle.selectedPage}
+            onClick={ (e) => {this.onPageChanged(p); }}>{p + " "}</span>
+          })}
+        </div>
         {
           this.props.users.map (u => <div key={u.id}>
         <div className={usersStyle.s}>
