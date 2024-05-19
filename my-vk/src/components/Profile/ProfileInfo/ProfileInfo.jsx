@@ -1,6 +1,6 @@
 import React from "react";
 import profInfoStyle from './ProfileInfo.module.css';
-import ProfileImg from '../../../assets/images/ProfileImg.png';
+//import ProfileImg from '../../../assets/images/ProfileImg.png';
 import Preloader from '../../common/Preloader.jsx';
 
 function ProfileInfo(props) {
@@ -10,7 +10,7 @@ function ProfileInfo(props) {
     return (
         <div className={profInfoStyle.content}>
             <div className={profInfoStyle.avatar}>
-                <img src={ProfileImg} alt="profileImg" />
+                {/*<img src={ProfileImg} alt="profileImg"/>*/}
             </div>
             <div>
                 <img src={props.profile.photos.large} alt="" />
