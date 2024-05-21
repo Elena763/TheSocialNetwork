@@ -5,7 +5,11 @@
     background-color: gray;
     color:aliceblue;
     font-size: larger;
+    grid-template-columns: 1fr 5fr 1fr;
   }
 .header img{
     width: 50px;
+}
+.loginBlock {
+    color: azure;
 }
