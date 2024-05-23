@@ -1,7 +1,7 @@
 import React from "react";
 import {Route,Routes, BrowserRouter} from "react-router-dom";
 import appStyle from "./App.module.css";
-import Header from "./components/Header/Header.jsx";
+import HeaderContainer from "./components/Header/HeaderContainer.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 //import Profile from './components/Profile/Profile.jsx';
 import Music from "./components/Music/Music.jsx";
@@ -16,7 +16,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className={appStyle.appWrapper}>
-        <Header />
+        <HeaderContainer />
         <Sidebar />
         <div className={appStyle.appWrapperContent}>
           <Routes>
