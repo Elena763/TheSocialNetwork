@@ -20,10 +20,11 @@ function MyPosts(props) {
 
     return (
       <div>
-          <h3>My posts</h3>
+          <h3 className={MypostsStyle.title}>My posts</h3>
         <div>
-          <div>
+          <div className={MypostsStyle.newpost}>
             <textarea
+            className={MypostsStyle.text}
             onChange={onPostChange}
             ref={newPostElement}
             value={props.newPostText}/>

@@ -1,6 +1,8 @@
 .posts{
   color: blue;
   border: 1px solid purple;
+  margin: 10px;
+  padding: 5px;
 }
 .button {
   width: 120px;
@@ -12,4 +14,18 @@
   color: rgb(48, 47, 47);
   font-size: large;
   background-color: #BACAD9;
+}
+.title {
+  margin: 10px;
+  color: #406086;
+  font-size: 30px;
+}
+.newpost {
+  margin: 10px;
+}
+.text {
+  border-radius: 5px;
+  background-color: #bacad979;
+  font-family: cursive;
+  height: 70px;
 }

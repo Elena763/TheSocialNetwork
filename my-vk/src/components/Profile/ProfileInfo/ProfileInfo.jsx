@@ -12,7 +12,7 @@ function ProfileInfo(props) {
             <div className={profInfoStyle.avatar}>
                 {/*<img src={ProfileImg} alt="profileImg"/>*/}
             </div>
-            <div>
+            <div className={profInfoStyle.userpic}>
                 <img src={props.profile.photos.large} alt="" />
             </div>
         </div>
