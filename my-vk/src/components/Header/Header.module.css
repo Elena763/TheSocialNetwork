@@ -2,8 +2,8 @@
     display: grid;
     border: 1px solid red;
     grid-area: hdr;
-    background-color: gray;
-    color:aliceblue;
+    background-color: #406086;
+    color:#BACAD9;
     font-size: larger;
     grid-template-columns: 1fr 5fr 1fr;
   }
@@ -11,5 +11,5 @@
     width: 50px;
 }
 .loginBlock {
-    color: azure;
+    color: #BACAD9;
 }
