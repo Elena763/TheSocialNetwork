@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import usersStyle from './Users.module.css';
 import userPic from "../../assets/images/ProfileImg.png";
-import axios from "axios";
+//import axios from "axios";
+//import { userAPI } from "../../api/api";
 
 function Users(props)  {
 
@@ -39,35 +40,11 @@ function Users(props)  {
             <div className={usersStyle.s}>
               { u.followed
               ? <button disabled={props.followingInProgress.some(id=> id === u.id)} className={usersStyle.button_unfollow} onClick={() => {
-                props.toggleFollowingProgress(true, u.id);
-                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                  withCredentials: true,
-                  headers: {
-                    "API-KEY": "5e0dd846-f47c-4722-af37-a3cdaf183bd4"
-                  },
-                })
-                  .then(response => {
-                    if (response.data.resultCode == 0){
-                      props.unfollow(u.id);
-                    }
-                    props.toggleFollowingProgress(false, u.id);
-                  });
+                props.unfollow(u.id);
                 }} >Unfollow</button>
 
               : <button isabled={props.followingInProgress.some(id=> id === u.id)} className={usersStyle.button} onClick={() => {
-                props.toggleFollowingProgress(true, u.id);
-                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                  withCredentials: true,
-                  headers: {
-                    "API-KEY": "5e0dd846-f47c-4722-af37-a3cdaf183bd4"
-                  },
-                })
-                  .then(response => {
-                    if (response.data.resultCode == 0){
-                      props.follow(u.id);
-                    }
-                    props.toggleFollowingProgress(false, u.id);
-                  });
+                props.follow(u.id);
               }} >Follow</button>}
             </div>
         </div>
