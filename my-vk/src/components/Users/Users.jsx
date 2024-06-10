@@ -43,7 +43,7 @@ function Users(props)  {
                 props.unfollow(u.id);
                 }} >Unfollow</button>
 
-              : <button isabled={props.followingInProgress.some(id=> id === u.id)} className={usersStyle.button} onClick={() => {
+              : <button disabled={props.followingInProgress.some(id=> id === u.id)} className={usersStyle.button} onClick={() => {
                 props.follow(u.id);
               }} >Follow</button>}
             </div>
