@@ -10,6 +10,7 @@ import Settings from "./components/Settings/Settings.jsx"
 import DialogsContainer from "./components/Dialogs/DialogsContainer.jsx";
 import UsersContainer from "./components/Users/UsersContainer.jsx";
 import ProfileContainer from "./components/Profile/ProfileContainer.jsx";
+import Login from "./components/Login/Login.jsx";
 
 function App(props) {
 
@@ -21,11 +22,11 @@ function App(props) {
         <div className={appStyle.appWrapperContent}>
           <Routes>
 
-          <Route path='/dialogs'
+            <Route path='/dialogs'
               element={<DialogsContainer
                 store={props.store}
                 />} />
-            <Route path='/profile/:userId'
+            <Route path='/profile/*'
               element={<ProfileContainer
                 store={props.store}
                 />} />
@@ -33,6 +34,7 @@ function App(props) {
             <Route path='/music' element={<Music/>} />
             <Route path='/settings' element={<Settings/>} />
             <Route path='/users' element={<UsersContainer/>} />
+            <Route path='/login' element={<Login/>} />
           </Routes>
         </div>
       </div>

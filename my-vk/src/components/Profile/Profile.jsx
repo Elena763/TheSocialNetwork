@@ -5,7 +5,6 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
 import MyPostsContainer from "./MyPosts/MyPostsContainer.jsx";
 
 function Profile(props) {
-
     return (
       <div className={profileStyle.profile}>
         <ProfileInfo profile={props.profile}/>

@@ -2,6 +2,7 @@ import React from "react";
 import DialogsStyle from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
+import { Navigate } from "react-router-dom";
 
 function Dialogs(props) {
 
@@ -22,7 +23,9 @@ function Dialogs(props) {
     props.updateNewMessageBody(message);
   }
 
-    return (
+  if (!props.isAuth) return <Navigate to={'/login'}/>;
+
+  return (
       <div className={DialogsStyle.wrapper}>
         <div className={DialogsStyle.item}>
           <h5>Dialogs</h5>
