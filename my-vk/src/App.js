@@ -13,7 +13,6 @@ import ProfileContainer from "./components/Profile/ProfileContainer.jsx";
 import Login from "./components/Login/Login.jsx";
 
 function App(props) {
-
   return (
     <BrowserRouter>
       <div className={appStyle.appWrapper}>

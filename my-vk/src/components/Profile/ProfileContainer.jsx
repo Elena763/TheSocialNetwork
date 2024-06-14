@@ -8,17 +8,17 @@ import { useParams, Navigate } from "react-router-dom";
 
 function ProfileContainer(props) {
 
-    let {userId} = useParams();
-    if (!userId) {
-      userId=2;
+    let {userID} = useParams();
+    if (!userID) {
+      userID=2;
     };
-    useEffect((props) => {
-      if (!props.isAuth) {
-        return <Navigate to={'/login'}/>;
-      }
-      props.getUserProfile(userId);
-    },[userId]);
 
+    useEffect(() => {
+      props.getUserProfile(userID);
+    },[userID]);
+    if (!props.isAuth) {
+      return <Navigate to={'/login'}/>;
+    };
     return (
       <Profile profile={props.profile}/>
     );
