@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile.jsx";
 import { getUserProfile } from "../../redux/profileReducer.js";
-//import axios from "axios";
 import { useParams, Navigate } from "react-router-dom";
-//import { userAPI } from "../../api/api.js";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect.js";
 
-function ProfileContainer(props) {
+export function ProfileContainer(props) {
 
     let {userID} = useParams();
     if (!userID) {
@@ -20,13 +19,15 @@ function ProfileContainer(props) {
       return <Navigate to={'/login'}/>;
     };
     return (
-      <Profile profile={props.profile}/>
+      <Profile {...props} profile={props.profile}/>
     );
 }
+
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
 
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
   isAuth: state.auth.isAuth,
 });
 
-export default connect (mapStateToProps, {getUserProfile}) (ProfileContainer);
+export default connect (mapStateToProps, {getUserProfile}) (AuthRedirectComponent);
