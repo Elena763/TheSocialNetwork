@@ -2,12 +2,13 @@ import React from "react";
 import profInfoStyle from './ProfileInfo.module.css';
 //import ProfileImg from '../../../assets/images/ProfileImg.png';
 import Preloader from '../../common/Preloader.jsx';
+import ProfileStatus from "./ProfileStatus.jsx";
 
 function ProfileInfo(props) {
     if (!props.profile) {
         return <Preloader />
     }
-    console.log(props);
+
     return (
         <div className={profInfoStyle.content}>
             <div className={profInfoStyle.avatar}>
@@ -15,9 +16,10 @@ function ProfileInfo(props) {
             </div>
             <div className={profInfoStyle.userpic}>
                 <img src={props.profile.photos.large} alt="" />
+                <ProfileStatus status={"Hello"} />
             </div>
         </div>
     );
-  }
+}
 
-  export default ProfileInfo;
+export default ProfileInfo;
