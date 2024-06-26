@@ -5,6 +5,7 @@
 .avatar {
     border: 1px solid black;
     border-radius: 40px;
+    box-shadow: 5px 5px 5px 5px #6491CA;
 }
 .userpic img {
     border-radius: 15px;
