@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile.jsx";
 import { getUserProfile, getStatus, updateStatus } from "../../redux/profileReducer.js";
@@ -8,15 +8,16 @@ import { compose } from "@reduxjs/toolkit";
 
 function ProfileContainer(props) {
 
-    let userID = useParams();
+    let [userID, setUserID] = useState();
     if (!userID) {
       userID=2;
     };
-
+    alert(userID);
     useEffect(() => {
       getUserProfile(userID);
       getStatus(userID);
     },[userID]);
+
     if (!props.isAuth) {
       return <Navigate to={'/login'}/>;
     };
