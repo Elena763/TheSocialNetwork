@@ -25,7 +25,7 @@ function App(props) {
               element={<DialogsContainer
                 store={props.store}
                 />} />
-            <Route path='/profile/*'
+            <Route path='/profile/:id'
               element={<ProfileContainer
                 store={props.store}
                 />} />
