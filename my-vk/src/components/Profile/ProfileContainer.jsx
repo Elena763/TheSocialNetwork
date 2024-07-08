@@ -11,7 +11,7 @@ function ProfileContainer(props) {
     let params = useParams();
     let userID = params.id;
     if (!userID) {
-      userID=2;
+      userID=31305;
     };
     useEffect(() => {
       props.getUserProfile(userID);
