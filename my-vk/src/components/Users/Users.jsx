@@ -13,8 +13,8 @@ function Users(props)  {
     pages.push(i);
   };
   let curP = props.currentPage;
-  let curPF = ((curP - 10) < 0) ?  0  : curP - 10 ;
-  let curPL = curP + 10;
+  let curPF = ((curP - 15) < 0) ?  0  : curP - 10 ;
+  let curPL = curP + 15;
   let slicedPages = pages.slice( curPF, curPL);
 
   return (

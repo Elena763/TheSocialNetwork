@@ -9,9 +9,9 @@ function Dialogs(props) {
 
   let state = props.dialogsPage;
   let dialogElements = state.dialogs.map (d => <DialogItem name={d.name} id={d.id}/>);
-  let messageElements = state.messages.map (m => <Message message={m.message}/>);
-  //let newMessageBody = state.newMessageBody;
+  let messageElements = state.messages.map (m => <Message message={m.message} key={m.id}/>);
   let addNewMessage = (values) => {
+    console.log(values);
     props.sendMessage(values.newMessageBody);
   }
 
@@ -21,7 +21,9 @@ function Dialogs(props) {
       <div className={DialogsStyle.wrapper}>
         <div className={DialogsStyle.item}>
           <h5>Dialogs</h5>
-          <div className={DialogsStyle.user}>{dialogElements}</div>
+          <div className={DialogsStyle.user}>
+            {dialogElements}
+          </div>
         </div>
         <div className={DialogsStyle.messages}>
           {messageElements}
@@ -31,37 +33,34 @@ function Dialogs(props) {
     );
 }
 
-
-//const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-/*const onSubmit = async values => {
-  await sleep(300)
-  window.alert(JSON.stringify(values, 0, 2))
-}*/
-
-function AddMessageForm(props) {
-  console.log(props);
+const AddMessageForm = (props) => {
   return (
-    <Form onSubmit={onSubmit}
-    initialValues={{ stooge: '', employed: false }}
-    render={props => {
-      return (
-        <form onSubmit={props.handleSubmit}>
+    <Form
+    initialValues={{
+      firstName: ''
+      }}
+      onSubmit={values => {
+      }}
+      validate={values => {
+      }}
+    >
+     {({ handleSubmit, pristine, form, submitting }) => (
+        <form onSubmit={handleSubmit}>
           <div>
-            <Field component={"textarea"}
+            <Field
+            component={"textarea"}
             name="newMessageBody"
             placeholder="Написать сообщение"
             className={DialogsStyle.text}
             >
             </Field>
-            <button
+            <button type="submit"
             className={DialogsStyle.button}
-            >Add</button>
+            >Send</button>
           </div>
         </form>
-      )
-    }}
-    />
+      )}
+    </Form>
   )
 }
 
