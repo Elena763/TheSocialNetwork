@@ -7,21 +7,25 @@ h5{
 }
 .item {
     border: 1px solid red;
+    background-color: #96AFCD;
 }
 .user {
     border: 1px solid rgb(0, 255, 255);
     display: grid;
     height: 70%;
+    background-color: #7F95AD;
 }
 .messages {
-    border: 1px solid rgb(0, 255, 42);
+    border: 1px solid #233647;
+    background-color: #7F95AD;
 }
 .text {
     border-radius: 10px;
+    color: #233647;
 }
 .button {
     border-radius: 7px;
     height: 30px;
     width: 150px;
-    background-color: rgba(44, 70, 117, 0.425);
+    background-color: #406086;
 }
