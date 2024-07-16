@@ -1,5 +1,4 @@
 # TheSocialNetwork
-//![logo](assets/img/readme_logo.png)
 
 ---
 
