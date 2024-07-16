@@ -5,11 +5,6 @@
 
 ## Website functionality
 
-//- On this platform, the user has the opportunity to get acquainted with architectural projects.
-//- It is possible to move between the pages of the site, which makes it possible to learn more about the projects of interest.
-//- Embedded map with company location.
-//- Possibility of filling out a form for consultation on an architectural project.
-//- Website adapted to different device sizes.
 ---
 
 ## Used technologies
@@ -23,4 +18,3 @@
 
 ## Link
 
-//[![link](./assets/img/1_1_icon.png)Website of architects](https://annashp.github.io/Website-of-architects/)
