@@ -3,7 +3,7 @@ import DialogsStyle from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
 import { Navigate } from "react-router-dom";
-import { Form, Field } from 'react-final-form';
+import { Form, Field, FormSpy } from 'react-final-form';
 
 function Dialogs(props) {
 
@@ -36,27 +36,34 @@ function Dialogs(props) {
 const AddMessageForm = (props) => {
   return (
     <Form
-    initialValues={{
-      firstName: ''
-      }}
-      onSubmit={values => {
-      }}
-      validate={values => {
+      onSubmit={props.onSubmit}
+      subscription={{
+        submitted: true
       }}
     >
-     {({ handleSubmit, pristine, form, submitting }) => (
+     {({ handleSubmit, submitting, values }) => (
         <form onSubmit={handleSubmit}>
           <div>
             <Field
             component={"textarea"}
             name="newMessageBody"
             placeholder="Написать сообщение"
+            subscription={{
+              value: true,
+              active: true,
+              error: true,
+              touched: true
+            }}
             className={DialogsStyle.text}
             >
             </Field>
             <button type="submit"
             className={DialogsStyle.button}
+            disabled={submitting}
             >Send</button>
+            {/*<FormSpy subscription={{ values: true }}>
+            {({ values }) => <pre>{JSON.stringify(values, undefined, 2)}</pre>}
+          </FormSpy>*/}
           </div>
         </form>
       )}
