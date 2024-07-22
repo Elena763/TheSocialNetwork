@@ -2,6 +2,9 @@ import React from "react";
 import MypostsStyle from './MyPosts.module.css';
 import Post from "./Post/Post";
 import { Form, Field } from 'react-final-form';
+import {required, maxLengthCreator} from "../../../utils/validators/validators.js";
+
+const maxLength10 = maxLengthCreator(10);
 
 function MyPosts(props) {
 
@@ -23,7 +26,7 @@ function MyPosts(props) {
     );
 }
 
-  const AddNewPostForm = (props) => {
+const AddNewPostForm = (props) => {
 
     return (
       <Form
@@ -39,6 +42,7 @@ function MyPosts(props) {
             component={"textarea"}
             name="newPostText"
             className={MypostsStyle.text}
+            validate={[required, maxLength10]}
             >
             </Field>
           </div>
