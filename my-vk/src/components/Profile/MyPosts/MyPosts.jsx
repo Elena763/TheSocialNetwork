@@ -2,9 +2,14 @@ import React from "react";
 import MypostsStyle from './MyPosts.module.css';
 import Post from "./Post/Post";
 import { Form, Field } from 'react-final-form';
-import {required, maxLengthCreator} from "../../../utils/validators/validators.js";
+import {required, maxLengthCreator, minLengthCreator} from "../../../utils/validators/validators.js";
+//import { compose } from "@reduxjs/toolkit";
 
 const maxLength10 = maxLengthCreator(10);
+const minLength2 = minLengthCreator(2);
+
+const composeValidators = (...validators) => value =>
+  validators.reduce((error, validator) => error || validator(value), undefined)
 
 function MyPosts(props) {
 
@@ -42,7 +47,7 @@ const AddNewPostForm = (props) => {
             component={"textarea"}
             name="newPostText"
             className={MypostsStyle.text}
-            validate={[required, maxLength10]}
+            validate={composeValidators(required, maxLength10, minLength2)}
             >
             </Field>
           </div>
