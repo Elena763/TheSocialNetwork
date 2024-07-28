@@ -1,6 +1,9 @@
 .item {
-  color: rgb(35, 54, 5);
-  border: 1px solid brown;
+  background-color: #bacad9;
+  border: 2px dotted #2c3135;
+  border-radius: 5px;
+  margin-top: 7px;
+  color: #2c3135;
 }
 .item img {
   width: 50px;
