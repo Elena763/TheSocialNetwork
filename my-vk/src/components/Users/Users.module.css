@@ -10,6 +10,7 @@
 }
 .user {
     border: 1px solid green;
+    border-radius: 15px;
     display: grid;
     justify-content: center;
 }
@@ -24,6 +25,7 @@
     border-radius: 50px;
     background-color: #7F95AD;
     margin-top: 10px;
+    box-shadow: 3px 3px 5px 5px #7f95ad77;
 }
 .selectedPage {
     font-weight: bold;
@@ -73,6 +75,7 @@
     background-color: #96AFCD;
     cursor: pointer;
     margin-top: 10px;
+    box-shadow: 2px 2px 3px 3px #7f95ad77;
 }
 .button_unfollow {
     width: 80px;
@@ -82,6 +85,7 @@
     background-color: #7F95AD;
     cursor: pointer;
     margin-top: 10px;
+    box-shadow: 2px 2px 3px 3px #7f95adbd;
 }
 .pages {
     font-family: Arial, Helvetica, sans-serif;
