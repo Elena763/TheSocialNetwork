@@ -1,10 +1,13 @@
+.dialog{
+    display: grid;
+}
 .link {
     border: 1px solid #406086;
     text-decoration: none;
     color: black;
     padding: 5px;
     margin: 5px;
-    min-width: 100px;
     box-shadow: 1px 1px 1px 1px #406086;
     border-radius: 2px;
+    text-align: center;
 }

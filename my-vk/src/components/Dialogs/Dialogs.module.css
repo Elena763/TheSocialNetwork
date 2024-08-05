@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 3fr;
 }
 h5{
-    margin-left: 5px;
+    margin-left: calc(50% - 23px);
 }
 .item {
     border: 1px solid red;
@@ -11,13 +11,13 @@ h5{
 }
 .user {
     border: 1px solid rgb(0, 255, 255);
-    display: grid;
     height: 70%;
     background-color: #7F95AD;
 }
 .messages {
     border: 1px solid #233647;
     background-color: #7F95AD;
+
 }
 .text {
     border-radius: 10px;
